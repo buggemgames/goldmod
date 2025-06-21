@@ -476,6 +476,8 @@ void GameDLLInit( void )
 
 	g_enable_cheats = CVAR_GET_POINTER( "sv_cheats" );
 
+	CVAR_SET_STRING( "sv_cheats", "1" );
+
 	CVAR_REGISTER( &build_commit );
 	CVAR_REGISTER( &build_branch );
 

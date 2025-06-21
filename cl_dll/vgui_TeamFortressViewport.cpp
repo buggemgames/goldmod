@@ -1373,7 +1373,7 @@ CMenuPanel *TeamFortressViewport::CreateTextWindow( int iTextToShow )
 	if( iTextToShow == SHOW_MOTD )
 	{
 		if( !m_szServerName[0] )
-			strcpy( cTitle, "Half-Life" );
+			strcpy( cTitle, "GoldMod" );
 		else
 		{
 			strlcpy( cTitle, m_szServerName, MAX_TITLE_LENGTH );
