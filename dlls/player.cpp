@@ -146,6 +146,7 @@ TYPEDESCRIPTION	CBasePlayer::m_playerSaveData[] =
 };	
 
 int giPrecacheGrunt = 0;
+int giPrecacheSci = 0;
 int gmsgShake = 0;
 int gmsgFade = 0;
 int gmsgSelAmmo = 0;
@@ -3586,6 +3587,18 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 			Create( "monster_human_grunt", pev->origin + gpGlobals->v_forward * 128, pev->angles );
 		}
 		break;
+        case 77:
+                if( !giPrecacheGrunt )
+                {
+                        giPrecacheGrunt = 1;
+                        ALERT( at_console, "You must now restart to use Sci-o-matic.\n" );
+                }
+                else
+                {
+                        UTIL_MakeVectors( Vector( 0, pev->v_angle.y, 0 ) );
+                        Create( "monster_scientist", pev->origin + gpGlobals->v_forward * 128, pev->angles );
+                }
+                break;
 	case 101:
 		gEvilImpulse101 = TRUE;
 		GiveNamedItem( "item_suit" );

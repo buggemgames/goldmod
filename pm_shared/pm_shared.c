@@ -2421,8 +2421,8 @@ void PM_NoClip( void )
 	//float currentspeed, addspeed, accelspeed;
 
 	// Copy movement amounts
-	fmove = pmove->cmd.forwardmove;
-	smove = pmove->cmd.sidemove;
+	fmove = ( pmove->cmd.forwardmove ) * 1.5;
+	smove = ( pmove->cmd.sidemove )    * 1.5 ;
 
 	VectorNormalize( pmove->forward ); 
 	VectorNormalize( pmove->right );
